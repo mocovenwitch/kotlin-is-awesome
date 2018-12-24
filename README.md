@@ -11,13 +11,13 @@ My study note of Kotlin. From basic to data structure and algorithm, might cover
     - [data class](#data-class)
     - [primitive types?](#primitive-types?)
 - [Coroutines](#Coroutines)
-    - [Kotlin Coroutines V.S. RxJava](#Kotlin-Coroutines-V.S.-RxJava)
-    - [Kotlin Coroutines V.S. Threads](#Kotlin-Coroutines-V.S.-Threads)
+    - [Kotlin Coroutines VS RxJava](#Kotlin-Coroutines-VS-RxJava)
+    - [Kotlin Coroutines VS Threads](#Kotlin-Coroutines-VS-Threads)
     - [suspend fun](#suspend-fun)
     - [Job](#Job)
     - [launch & async](#launch-&-async)
-    - [delay()](#delay())
-    - [withContext()](#withContext())
+    - [delay](#delay)
+    - [withContext](#withContext)
     - [Channel](#Channel)
     - [Other](#Other)
 - [Sealed class](#Sealed-class)
@@ -125,7 +125,7 @@ Everything in Kotlin is an object. To user, all the numbers, strings, booleans a
 
 Kotlin 1.1 introduced coroutines, a new way of writing asynchronous, non-blocking code.
 
-### Kotlin Coroutines V.S. RxJava
+### Kotlin Coroutines VS RxJava
 The two main purposes I started using RxJava are:
  - We can do streaming programming by using RxJava, thinking data as streams, and everything can be an Observable, and we subscribe on it and wait for it on main thread, and then do the rest of work
  - We can manage threadings easier, compare to using Async... and other threading API in Android
@@ -135,7 +135,7 @@ Then why do I want to try Coroutines?
  - Simpler code, easy to learn
  - Less threads costing (thread is resource)
 
-### Kotlin Coroutines V.S. Threads
+### Kotlin Coroutines VS Threads
  - Kotlin coroutines can run in one thread or different threads, or in a shared thread pool
  - Coroutines runs cooperatively multitasking; Thread runs preemptively multitasking
 
@@ -163,10 +163,10 @@ Just by doing this, we started a new coroutines. By default, it runs in a shared
     }
 Async returns a value from coroutines.
 
-### delay()
+### delay
 `delay()` only suspend itself - the current coroutines, does not block any thread. `delay()` cannot be called from main thread, since it can only be called from coroutines or other suspend function.
 
-### withContext()
+### withContext
 
     withContext(IO) {
         ...
