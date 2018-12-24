@@ -25,7 +25,7 @@ My study note of Kotlin. From basic to data structure and algorithm, might cover
 ## Kotlin Koan
 [Kotlin koans](ttps://github.com/Kotlin/kotlin-koans)
 
-### Join To String [[back]](#Kotlin-is-Awesome)
+### Join To String
 
     fun task2(collection: Collection<Int>): String {
         return collection.joinToString(prefix = "{", postfix = "}")
@@ -33,7 +33,7 @@ My study note of Kotlin. From basic to data structure and algorithm, might cover
 
     assertEquals("{1, 2, 3, 42, 555}", task2(listOf(1, 2, 3, 42, 555)))
 
-### Setter and Getter [[back]](#Kotlin-is-Awesome)
+### Setter and Getter
 `field` refers to the property itself. And in setter funtion, we can manipulate other properties.
 
     class PropertyExample() {
@@ -53,7 +53,7 @@ And also can go with just statement.
             get() = 42
     }
 
-### Lots of ways of being lazy [[back]](#Kotlin-is-Awesome)
+### Lots of ways of being lazy
 
 `Without delegation`:
 
@@ -74,7 +74,7 @@ And also can go with just statement.
         }
     }
 
-### Any with Lambda [[back]](#Kotlin-is-Awesome)
+### Any with Lambda
 
 Returns true if at least one element matches the given predicate.
 
@@ -93,7 +93,7 @@ Example:
     val emptyList = emptyList<Int>()
     println("emptyList.any { true } is ${emptyList.any { true }}") // false
 
-### String pattern [[back]](#Kotlin-is-Awesome)
+### String pattern
 Kotlin has two types of String
 - one is escaped strings, which is similar to Java String, which have escaped characters
 `val s = "Hello, world!\n"`;
@@ -110,22 +110,22 @@ And here is another good example to make pattern:
     val month = "(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)"
     fun getPattern(): String = """\d{2} ${month} \d{4}"""
 
-## data class [[back]](#Kotlin-is-Awesome)
+## data class
 I know data class for a while but I dont know this untill today: the compiler automatically does for `data class User(val name: String, val age: Int)`
 
 - generate `equals()` and `hashCode()`
 - `toString()` of the form `"User(name=John, age=42)"`;
 
-## primitive types? [[back]](#Kotlin-is-Awesome)
+## primitive types?
 Everything in Kotlin is an object. To user, all the numbers, strings, booleans are classes. But, there are some type have internal representation, e.g. numbers, characters, booleans can be represented as primitive type at runtime.
 
 
 
-## Coroutines [[back]](#Kotlin-is-Awesome)
+## Coroutines
 
 Kotlin 1.1 introduced coroutines, a new way of writing asynchronous, non-blocking code.
 
-### Kotlin Coroutines V.S. RxJava [[back]](#Kotlin-is-Awesome)
+### Kotlin Coroutines V.S. RxJava
 The two main purposes I started using RxJava are:
  - We can do streaming programming by using RxJava, thinking data as streams, and everything can be an Observable, and we subscribe on it and wait for it on main thread, and then do the rest of work
  - We can manage threadings easier, compare to using Async... and other threading API in Android
@@ -135,7 +135,7 @@ Then why do I want to try Coroutines?
  - Simpler code, easy to learn
  - Less threads costing (thread is resource)
 
-### Kotlin Coroutines V.S. Threads [[back]](#Kotlin-is-Awesome)
+### Kotlin Coroutines V.S. Threads
  - Kotlin coroutines can run in one thread or different threads, or in a shared thread pool
  - Coroutines runs cooperatively multitasking; Thread runs preemptively multitasking
 
@@ -144,12 +144,12 @@ Have some readings:
 - [Coroutines vs Threads](https://stackoverflow.com/questions/43021816/difference-between-thread-and-coroutine-in-kotlin)
 
 
-### suspend fun [[back]](#Kotlin-is-Awesome)
+### suspend fun
 A method which need to run at coroutines.
 
-### Job [[back]](#Kotlin-is-Awesome)
+### Job
 
-### launch & async [[back]](#Kotlin-is-Awesome)
+### launch & async
 
     launch {
         ...
@@ -163,10 +163,10 @@ Just by doing this, we started a new coroutines. By default, it runs in a shared
     }
 Async returns a value from coroutines.
 
-### delay() [[back]](#Kotlin-is-Awesome)
+### delay()
 `delay()` only suspend itself - the current coroutines, does not block any thread. `delay()` cannot be called from main thread, since it can only be called from coroutines or other suspend function.
 
-### withContext() [[back]](#Kotlin-is-Awesome)
+### withContext()
 
     withContext(IO) {
         ...
@@ -181,7 +181,7 @@ Async returns a value from coroutines.
 
 
 
-### Channel [[back]](#Kotlin-is-Awesome)
+### Channel
 `Deferred` values provide a convenient way to transfer a single value between coroutines. `Channels` provide a way to transfer a stream of values.
 
     val channel = Channel<Int>()
@@ -193,11 +193,11 @@ Async returns a value from coroutines.
     for (y in channel) println(y)
     println("Done!")
 
-### Other [[back]](#Kotlin-is-Awesome)
+### Other
 `org.jetbrains.kotlinx:kotlinx-coroutines-core:1.0.1` requires Kotlin version 1.3 and above.
 
 
-## Sealed class [[back]](#Kotlin-is-Awesome)
+## Sealed class
 Sealed class is abstract class can't be initialied directly.
 
 The benefit of sealed class:
@@ -233,3 +233,5 @@ The benefit of sealed class:
 
 
 [A good article](https://proandroiddev.com/kotlin-coroutines-patterns-anti-patterns-f9d12984c68e)
+
+[BACK](#Kotlin-is-Awesome)
