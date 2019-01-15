@@ -74,6 +74,8 @@ And also can go with just statement.
         }
     }
 
+By default, the evaluation of lazy properties is synchronized: the value is computed only in one thread, and all threads will see the same value.
+
 ### Any with Lambda
 
 Returns true if at least one element matches the given predicate.
