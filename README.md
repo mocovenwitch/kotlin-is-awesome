@@ -6,7 +6,7 @@ My study note of Kotlin. From basic to data structure and algorithm, might cover
     - [Join To String](#Join-To-String)
     - [Setter and Getter](#Setter-and-Getter)
     - [Lots of ways of being lazy](#Lots-of-ways-of-being-lazy)
-    - [Any with Lambda](Any-with-Lambda)
+    - [Any with Lambda](#Any-with-Lambda)
     - [String pattern](#String-pattern)
     - [data class](#data-class)
     - [primitive types?](#primitive-types?)
