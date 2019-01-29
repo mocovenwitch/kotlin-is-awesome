@@ -9,7 +9,8 @@ My study note of Kotlin. From basic to data structure and algorithm, might cover
     - [Any with Lambda](#Any-with-Lambda)
     - [String pattern](#String-pattern)
     - [data class](#data-class)
-    - [primitive types?](#primitive-types?)
+    - [primitive types](#primitive-types)
+    - [list and array](#list-and-array)
 - [Coroutines](#Coroutines)
     - [Kotlin Coroutines VS RxJava](#Kotlin-Coroutines-VS-RxJava)
     - [Kotlin Coroutines VS Threads](#Kotlin-Coroutines-VS-Threads)
@@ -118,10 +119,10 @@ I know data class for a while but I dont know this untill today: the compiler au
 - generate `equals()` and `hashCode()`
 - `toString()` of the form `"User(name=John, age=42)"`;
 
-## primitive types?
+## primitive types
 Everything in Kotlin is an object. To user, all the numbers, strings, booleans are classes. But, there are some type have internal representation, e.g. numbers, characters, booleans can be represented as primitive type at runtime.
 
-## list and array in Kotlin
+## list and array
 
 `list` in kotlin is immutable, if we want to update it, should use mutableList.
 
