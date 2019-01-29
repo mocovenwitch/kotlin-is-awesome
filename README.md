@@ -121,7 +121,11 @@ I know data class for a while but I dont know this untill today: the compiler au
 ## primitive types?
 Everything in Kotlin is an object. To user, all the numbers, strings, booleans are classes. But, there are some type have internal representation, e.g. numbers, characters, booleans can be represented as primitive type at runtime.
 
+## list and array in Kotlin
 
+`list` in kotlin is immutable, if we want to update it, should use mutableList.
+
+`array` in kotlin has .plus operation, it is easy to copy or combine two array.
 
 ## Coroutines
 
