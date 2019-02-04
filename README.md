@@ -11,6 +11,7 @@ My study note of Kotlin. From basic to data structure and algorithm, might cover
     - [data class](#data-class)
     - [primitive types](#primitive-types)
     - [list and array](#list-and-array)
+    - [zip](#zip)
 - [Coroutines](#Coroutines)
     - [Kotlin Coroutines VS RxJava](#Kotlin-Coroutines-VS-RxJava)
     - [Kotlin Coroutines VS Threads](#Kotlin-Coroutines-VS-Threads)
@@ -127,6 +128,40 @@ Everything in Kotlin is an object. To user, all the numbers, strings, booleans a
 `list` in kotlin is immutable, if we want to update it, should use mutableList.
 
 `array` in kotlin has .plus operation, it is easy to copy or combine two array.
+
+## zip
+Returns a list of values built from the elements of `this` collection and the [other] collection with the same index
+ * using the provided [transform] function applied to each pair of elements.
+ * The returned list has length of the shortest collection.
+
+Let have an `example`:
+
+[CoolZip](https://github.com/mocovenwitch/kotlin-is-awesome/blob/master/src/CoolZip.kt)
+
+`Kotlin Source code`
+public inline fun <T, R, V> Iterable<T>.zip(other: Iterable<R>, transform: (a: T, b: R) -> V): List<V> {
+    val first = iterator()
+    val second = other.iterator()
+    val list = ArrayList<V>(minOf(collectionSizeOrDefault(10), other.collectionSizeOrDefault(10)))
+    while (first.hasNext() && second.hasNext()) {
+        list.add(transform(first.next(), second.next()))
+    }
+    return list
+}
+
+`Time Complexity`
+If list one is size N (short one), list two is size M (large one), big-O is
+ - zip
+    - while is `O(N)`
+    - list.add is O(1) if add at the end and list not resize, but it grows up if resize the list
+ - foreach print O(N)
+
+ O(N) + O(N) is still O(N)
+
+`Space Complexity`
+Since it creates another list in zip function, and starts with the list size 10, we could expect more space cost
+
+`So we can say zip function is not that good in terms of time and space efficiency. But it makes good looking code.`
 
 ## Coroutines
 
