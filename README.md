@@ -139,15 +139,16 @@ Let have an `example`:
 [CoolZip](https://github.com/mocovenwitch/kotlin-is-awesome/blob/master/src/CoolZip.kt)
 
 `Kotlin Source code`
-public inline fun <T, R, V> Iterable<T>.zip(other: Iterable<R>, transform: (a: T, b: R) -> V): List<V> {
-    val first = iterator()
-    val second = other.iterator()
-    val list = ArrayList<V>(minOf(collectionSizeOrDefault(10), other.collectionSizeOrDefault(10)))
-    while (first.hasNext() && second.hasNext()) {
-        list.add(transform(first.next(), second.next()))
+
+    public inline fun <T, R, V> Iterable<T>.zip(other: Iterable<R>, transform: (a: T, b: R) -> V): List<V> {
+        val first = iterator()
+        val second = other.iterator()
+        val list = ArrayList<V>(minOf(collectionSizeOrDefault(10), other.collectionSizeOrDefault(10)))
+        while (first.hasNext() && second.hasNext()) {
+            list.add(transform(first.next(), second.next()))
+        }
+        return list
     }
-    return list
-}
 
 `Time Complexity`
 If list one is size N (short one), list two is size M (large one), big-O is
