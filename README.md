@@ -136,7 +136,7 @@ Currently, Kotlin data classes are ill-behaved with respect to this issue:
 - but if it is a multidimensional array (array of arrays), the subarrays will be compared referentially (through equals() on arrays),
 and if the declared type of a component is Any or T, but at runtime it happens to be an array, equals() will be called too.
 
-This behavior is inconsistent
+This behavior is inconsistent. [Read](https://blog.jetbrains.com/kotlin/2015/09/feedback-request-limitations-on-data-classes/) and [equality](https://kotlinlang.org/docs/reference/equality.html)
 
 `Example` [DataEquals](https://github.com/mocovenwitch/kotlin-is-awesome/blob/master/src/DataEquals.kt) print out false when the data class includes a array in it.
 
