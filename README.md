@@ -120,6 +120,31 @@ I know data class for a while but I dont know this untill today: the compiler au
 - generate `equals()` and `hashCode()`
 - `toString()` of the form `"User(name=John, age=42)"`;
 
+[2019-2-5 update]
+Compiler generates equals() and hashCode() for data class, but if we use array in it, we need to override it, since:
+
+In Kotlin there are two types of equality:
+- Structural equality == (a check for equals(), only check content)
+- Referential equality === (two references point to the same object);
+
+Array equals is not structually equals by default. Why?! JVM!
+
+`Root Cause`
+It’s a long-standing well-known issue on the JVM: equals() works differently for arrays and collections. `Collections are compared structurally, while arrays are not`, equals() for them simply resorts to referential equality: this === other.
+Currently, Kotlin data classes are ill-behaved with respect to this issue:
+- if you declare a component to be an array, it will be compared structurally,
+- but if it is a multidimensional array (array of arrays), the subarrays will be compared referentially (through equals() on arrays),
+and if the declared type of a component is Any or T, but at runtime it happens to be an array, equals() will be called too.
+
+This behavior is inconsistent
+
+`Example` [DataEquals](https://github.com/mocovenwitch/kotlin-is-awesome/blob/master/src/DataEquals.kt) print out false when the data class includes a array in it.
+
+`Solution`
+Make it a List other than Array.
+
+
+
 ## primitive types
 Everything in Kotlin is an object. To user, all the numbers, strings, booleans are classes. But, there are some type have internal representation, e.g. numbers, characters, booleans can be represented as primitive type at runtime.
 
