@@ -1,6 +1,6 @@
 # Kotlin is Awesome
 
-My study note of Kotlin. From basic to data structure and algorithm, might cover some usage in Android.
+My study note of Kotlin. From basic to [data structure and algorithm](./dsa.md), might cover some usage in Android.
 
 - [Kotlin Koan](#Kotlin-Koan)
     - [Join To String](#Join-To-String)
