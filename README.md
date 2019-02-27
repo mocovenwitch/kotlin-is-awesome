@@ -189,6 +189,19 @@ Since it creates another list in zip function, and starts with the list size 10,
 
 `So we can say zip function is not that good in terms of time and space efficiency. But it makes good looking code.`
 
+## Flat map by type Any
+Flat a map is easy to understand, but one day I have a linked hash map: LinkedHashMap<Int, Any>, value can be an object or a list of objects. I wanted flat function can flat all the objects into one level list no matter what.
+
+    val map = LinkedHashMap<String, Any>()
+    map["1"] = listOf("one", "two", "three")
+    val result = map.values.flatMap{listOf(it)} 
+
+The result size is one, which means it doesn't flat the map as I wish.
+
+While it simply works if I do `val map = LinkedHashMap<String, List<Any>>()`
+
+[map flat example](https://github.com/mocovenwitch/kotlin-is-awesome/blob/master/src/MapToList.kt)
+
 ## Coroutines
 
 Kotlin 1.1 introduced coroutines, a new way of writing asynchronous, non-blocking code.
