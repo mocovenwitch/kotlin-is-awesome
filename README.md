@@ -220,9 +220,7 @@ Note that some inline functions may call the lambdas passed to them as parameter
 
 `Break` and `continue are not yet available in inlined lambdas`, but we are planning to support them too.
 
-[code example](https://github.com/mocovenwitch/kotlin-is-awesome/blob/master/src/Myinlines.kt)
-
-
+[code example](https://github.com/mocovenwitch/kotlin-is-awesome/blob/master/src/MyInlines.kt)
 
 ## Coroutines
 
