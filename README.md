@@ -12,6 +12,9 @@ My study note of Kotlin. From basic to [data structure and algorithm](./DSA.md),
     - [primitive types](#primitive-types)
     - [list and array](#list-and-array)
     - [zip](#zip)
+- [Daily](#Daily)
+    - [Flat map by type Any](#Flat-map-by-type-Any)
+    - [Inline function and high-order function](#Inline-function-and-high-order-function)
 - [Coroutines](#Coroutines)
     - [Kotlin Coroutines VS RxJava](#Kotlin-Coroutines-VS-RxJava)
     - [Kotlin Coroutines VS Threads](#Kotlin-Coroutines-VS-Threads)
@@ -189,6 +192,8 @@ Since it creates another list in zip function, and starts with the list size 10,
 
 `So we can say zip function is not that good in terms of time and space efficiency. But it makes good looking code.`
 
+# Daily
+
 ## Flat map by type Any
 Flat a map is easy to understand, but one day I have a linked hash map: LinkedHashMap<Int, Any>, value can be an object or a list of objects. I wanted flat function can flat all the objects into one level list no matter what.
 
@@ -201,6 +206,23 @@ The result size is one, which means it doesn't flat the map as I wish.
 While it simply works if I do `val map = LinkedHashMap<String, List<Any>>()`
 
 [map flat example](https://github.com/mocovenwitch/kotlin-is-awesome/blob/master/src/MapToList.kt)
+
+## Inline function and high-order function
+`High-order function` is beautiful and elegant in code. 
+
+[my high-order funtion code example](https://github.com/mocovenwitch/kotlin-is-awesome/blob/master/src/HighOrderFun.kt)
+
+But it has drawbacks, since each function is an object, memory allocations (both for function objects and classes) and virtual calls introduce runtime overhead.
+
+But we could use inline function to avoid that runtime overhead. The `inline` modifier affects both the function itself and the lambdas passed to it: all of those will be inlined into the call site.
+
+Note that some inline functions may call the lambdas passed to them as parameters, in such cases, `non-local control flow is also not allowed` in the inline lambdas. To indicate that, the lambda parameter needs to be marked with the `crossinline` modifier.
+
+`Break` and `continue are not yet available in inlined lambdas`, but we are planning to support them too.
+
+[code example](https://github.com/mocovenwitch/kotlin-is-awesome/blob/master/src/Myinlines.kt)
+
+
 
 ## Coroutines
 
