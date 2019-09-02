@@ -15,6 +15,7 @@ My study note of Kotlin. From basic to [data structure and algorithm](./DSA.md),
 - [Daily](#Daily)
     - [Flat map by type Any](#Flat-map-by-type-Any)
     - [Inline function and high-order function](#Inline-function-and-high-order-function)
+    - [until infix](#until-infix)
 - [Coroutines](#Coroutines)
     - [Kotlin Coroutines VS RxJava](#Kotlin-Coroutines-VS-RxJava)
     - [Kotlin Coroutines VS Threads](#Kotlin-Coroutines-VS-Threads)
@@ -221,6 +222,18 @@ Note that some inline functions may call the lambdas passed to them as parameter
 `Break` and `continue are not yet available in inlined lambdas`, but we are planning to support them too.
 
 [code example](https://github.com/mocovenwitch/kotlin-is-awesome/blob/master/src/MyInlines.kt)
+
+## until infix
+
+`until` keyword is nothing but ..n-1, let's have a look at the source code:
+
+```
+public infix fun Int.until(to: Int): IntRange {
+    if (to <= Int.MIN_VALUE) return IntRange.EMPTY
+    return this .. (to - 1).toInt()
+}
+```
+There was a performance issue before Kotlin 1.1.4, but fixed already.
 
 ## Coroutines
 
