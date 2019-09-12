@@ -235,6 +235,11 @@ public infix fun Int.until(to: Int): IntRange {
 ```
 There was a performance issue before Kotlin 1.1.4, but fixed already.
 
+## Kotlin handle multiple exceptions
+
+## Java call Kotlin Extensions
+
+
 ## Coroutines
 
 Kotlin 1.1 introduced coroutines, a new way of writing asynchronous, non-blocking code.
