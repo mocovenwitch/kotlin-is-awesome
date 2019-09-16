@@ -16,6 +16,7 @@ My study note of Kotlin. From basic to [data structure and algorithm](./DSA.md),
     - [Flat map by type Any](#Flat-map-by-type-Any)
     - [Inline function and high-order function](#Inline-function-and-high-order-function)
     - [until infix](#until-infix)
+    - [Java call Kotlin Extensions](#Java-call-Kotlin-Extensions)
 - [Coroutines](#Coroutines)
     - [Kotlin Coroutines VS RxJava](#Kotlin-Coroutines-VS-RxJava)
     - [Kotlin Coroutines VS Threads](#Kotlin-Coroutines-VS-Threads)
@@ -237,7 +238,25 @@ There was a performance issue before Kotlin 1.1.4, but fixed already.
 
 ## Kotlin handle multiple exceptions
 
+
 ## Java call Kotlin Extensions
+
+We use Kotlin extensions a lot, which is one of the most useful functions in Kotlin. But in my working project, sometime we still have to maintain Java code.
+
+*Java calls to Kotlin Extension*
+
+```
+    ExtensionExampleKt.printMeOutWithTail("Hello", "world!");
+```
+
+Kotlin Extension
+```
+fun String.printMeOutWithTail(withTail: String) {
+    println("$this $withTail")
+}
+```
+
+BTW, When I was writing the example, named the package as "kotlin", then I got `Error:(1, 1) Kotlin: Only the Kotlin standard library is allowed to use the 'kotlin' package`. The error is from kotlinc-jvm, which means compiler does want you to use `kotlin.*` as package name.
 
 
 ## Coroutines
