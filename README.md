@@ -236,6 +236,18 @@ public infix fun Int.until(to: Int): IntRange {
 ```
 There was a performance issue before Kotlin 1.1.4, but fixed already.
 
+And we can define our own infix function as well:
+
+```
+infix fun Int.add(some:Int): Int {
+    return this + some
+}
+
+fun main(args: Array<String>) {
+    println(3 add 5)    
+}
+```
+
 ## Kotlin handle multiple exceptions
 
 
