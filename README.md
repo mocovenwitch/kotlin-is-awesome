@@ -250,6 +250,11 @@ fun main(args: Array<String>) {
 
 ## Kotlin handle multiple exceptions
 
+## Set.plus(...) and MutableSet.add(...)
+
+Understand `plus` and `add`.
+
+Check example `SetThings.kt`.
 
 ## Java call Kotlin Extensions
 
