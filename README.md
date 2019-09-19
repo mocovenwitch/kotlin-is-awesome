@@ -16,6 +16,7 @@ My study note of Kotlin. From basic to [data structure and algorithm](./DSA.md),
     - [Flat map by type Any](#Flat-map-by-type-Any)
     - [Inline function and high-order function](#Inline-function-and-high-order-function)
     - [until infix](#until-infix)
+    - [Set.plus and MutableSet.add](#Set.plus-and-MutableSet.add)
     - [Java call Kotlin Extensions](#Java-call-Kotlin-Extensions)
 - [Coroutines](#Coroutines)
     - [Kotlin Coroutines VS RxJava](#Kotlin-Coroutines-VS-RxJava)
@@ -250,7 +251,7 @@ fun main(args: Array<String>) {
 
 ## Kotlin handle multiple exceptions
 
-## Set.plus(...) and MutableSet.add(...)
+## Set.plus and MutableSet.add
 
 Understand `plus` and `add`.
 
