@@ -197,6 +197,15 @@ Since it creates another list in zip function, and starts with the list size 10,
 
 # Daily
 
+## Kotlin Bytecode
+Open your Kotlin file (I was at Java file, nothing happen...)
+
+Step 1: `Tools -> Kotlin -> Show Kotlin Bytecode`
+
+Step 2: `Decompile` to Java
+
+learnt from [here](https://medium.com/@mydogtom/tip-how-to-show-java-equivalent-for-kotlin-code-f7c81d76fa8)
+
 ## Kotlin android extention
 have a look at this one
 https://proandroiddev.com/kotlin-android-extensions-using-view-binding-the-right-way-707cd0c9e648
