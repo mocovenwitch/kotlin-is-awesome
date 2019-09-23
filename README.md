@@ -197,6 +197,10 @@ Since it creates another list in zip function, and starts with the list size 10,
 
 # Daily
 
+## Kotlin android extention
+have a look at this one
+https://proandroiddev.com/kotlin-android-extensions-using-view-binding-the-right-way-707cd0c9e648
+
 ## Flat map by type Any
 Flat a map is easy to understand, but one day I have a linked hash map: LinkedHashMap<Int, Any>, value can be an object or a list of objects. I wanted flat function can flat all the objects into one level list no matter what.
 
