@@ -363,7 +363,10 @@ Sealed class is abstract class can't be initialied directly.
 The benefit of sealed class:
 - when a value can have one of the types from a limited set, make value more restriced.
 - less code compare to use normal class
-- easily use with `when()`
+- easily use with `when()`, `else` is redundant, since sealed class is exhaustive.
+
+The inconvenient is:
+- sealed class and its children need to be in the same file or nested, since its constructors is private
 
 <b>Example</b>:
 
