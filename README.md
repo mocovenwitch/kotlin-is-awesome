@@ -18,6 +18,7 @@ My study note of Kotlin. From basic to [data structure and algorithm](./DSA.md),
     - [until infix](#until-infix)
     - [Set.plus and MutableSet.add](#Set.plus-and-MutableSet.add)
     - [Java call Kotlin Extensions](#Java-call-Kotlin-Extensions)
+    - [Function in function](#Function-in-function)
 - [Coroutines](#Coroutines)
     - [Kotlin Coroutines VS RxJava](#Kotlin-Coroutines-VS-RxJava)
     - [Kotlin Coroutines VS Threads](#Kotlin-Coroutines-VS-Threads)
@@ -289,6 +290,27 @@ fun String.printMeOutWithTail(withTail: String) {
 
 BTW, When I was writing the example, named the package as "kotlin", then I got `Error:(1, 1) Kotlin: Only the Kotlin standard library is allowed to use the 'kotlin' package`. The error is from kotlinc-jvm, which means compiler does want you to use `kotlin.*` as package name.
 
+## Function in function
+Interesting, a function inside of another function:
+
+```
+fun sayHi() {
+    fun say() {
+        System.out.println("hi")
+    }
+    say()
+}
+```
+
+## Take and take last
+```
+val mySet = mutableSetOf(1, 2, 3, 4)
+mySet.add(5)
+
+println(mySet.asSequence().take(3).toList())
+println(mySet.toList().takeLast(3))
+```
+take(3) means take the first 3 items, takeLast(3) means take the last 3 items. Easy enough to understand. BTW, `mutableSetOf()` is `LinkedHashSet` type.
 
 ## Coroutines
 
