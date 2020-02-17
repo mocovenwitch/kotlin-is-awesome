@@ -19,6 +19,8 @@ My study note of Kotlin. From basic to [data structure and algorithm](./DSA.md),
     - [Set.plus and MutableSet.add](#Set.plus-and-MutableSet.add)
     - [Java call Kotlin Extensions](#Java-call-Kotlin-Extensions)
     - [Function in function](#Function-in-function)
+    - [Constructor](#Constructor)
+    - [Order matters](#Order-matters)
 - [Coroutines](#Coroutines)
     - [Kotlin Coroutines VS RxJava](#Kotlin-Coroutines-VS-RxJava)
     - [Kotlin Coroutines VS Threads](#Kotlin-Coroutines-VS-Threads)
