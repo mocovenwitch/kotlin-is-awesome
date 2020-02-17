@@ -312,6 +312,21 @@ println(mySet.toList().takeLast(3))
 ```
 take(3) means take the first 3 items, takeLast(3) means take the last 3 items. Easy enough to understand. BTW, `mutableSetOf()` is `LinkedHashSet` type.
 
+## Order matters
+
+In Java, IDE compiles when class `property order` is messed up. But in Kotlin, it doesn't complain, but throw error in runtime. Here is an example:
+
+[Java example](https://github.com/mocovenwitch/kotlin-is-awesome/blob/master/src/OrderMattersJava.java)
+[Kotlin example](https://github.com/mocovenwitch/kotlin-is-awesome/blob/master/src/OrderMatters.kt)
+
+## Constructor
+
+constructor is always called `after` properties are loaded in class.
+
+[Java example](https://github.com/mocovenwitch/kotlin-is-awesome/blob/master/src/ConstructorJava.java)
+[Kotlin example](https://github.com/mocovenwitch/kotlin-is-awesome/blob/master/src/Constructor.kt)
+
+
 ## Coroutines
 
 Kotlin 1.1 introduced coroutines, a new way of writing asynchronous, non-blocking code.
