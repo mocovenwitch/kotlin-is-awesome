@@ -328,6 +328,20 @@ constructor is always called `after` properties are loaded in class.
 [Java example](https://github.com/mocovenwitch/kotlin-is-awesome/blob/master/src/ConstructorJava.java)
 [Kotlin example](https://github.com/mocovenwitch/kotlin-is-awesome/blob/master/src/Constructor.kt)
 
+## Function operator
+`::` is used as function operator
+
+```
+fun isOdd(x: Int) = x % 2 != 0
+
+fun main(args: Array<String>) {
+    val numbers = listOf(1, 2, 3)
+    println(numbers.filter(::isOdd)) // this line
+    println(numbers.filter { isOdd(it) }) // and this line do the same thing
+}
+```
+
+
 
 ## Coroutines
 
